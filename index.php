@@ -18,7 +18,7 @@
 
 <?php require_once("connection.php"); ?>
 </head>
-        
+
 <body>
 
     <!-- Navigation -->
