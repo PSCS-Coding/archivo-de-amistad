@@ -34,11 +34,8 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
-              <li class="nav-item">
-ABCD
-            </li>
             <li class="nav-item">
-              <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Logout</a>
+              <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Upload</a>
             </li>
           </ul>
         </div>
