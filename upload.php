@@ -3,7 +3,7 @@
 require_once("connection.php");
 
 $target_dir = "uploads/";
-$target_file = $target_dir . basename($_POST['memeName'] + explode(".", $_FILES["fileToUpload"]["name"])[1]);
+$target_file = $target_dir . basename($_POST['memeName'] . "." . explode(".", $_FILES["fileToUpload"]["name"])[1]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
@@ -41,7 +41,10 @@ if ($uploadOk == 0) {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "uploaded";
         $memeName = $_POST['memeName'];
-        $query = $db_server->query("INSERT INTO memes (memeName) VALUES ('$memeName')");
+        $stmt = $db_server->prepare("INSERT INTO memes (memeTitle) VALUES (?)");
+        $stmt->bind_param('s', $target_file);
+        $stmt->execute();
+        $stmt->close();
 
         header('Location: index.php?e=0');
     } else {
