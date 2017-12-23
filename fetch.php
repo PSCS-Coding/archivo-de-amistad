@@ -32,7 +32,7 @@ if(mysqli_num_rows($result) > 0)
 <img class="card-img-top" src="'.$row["memeTitle"].'" alt="Image failed to load.">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Name: '.$row["memeTitle"].'</li>
-    <li class="list-group-item">Date purchased: '.$better_date->format('M jS, Y').'</li>
+    <li class="list-group-item">Date added: '.$better_date->format('M jS, Y').'</li>
   </ul>
       <div class="card-footer">
       <small class="text-muted">Tags: Coming Soon.</small>
