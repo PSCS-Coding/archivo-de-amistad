@@ -1,13 +1,13 @@
 <!DOCTYPE html>
     <html>
         <head>
-            <title>Verge Beta</title>
+            <title>LOL</title>
             <link rel="stylesheet" type="text/css" href="global.css">
         </head>
         
         <body>
             
-            <h1><b>[DEVELOPER BETA]</b></h1>
+            <h1><b>LOLLOLOLOL</b></h1>
             <table>
                 <th>Name</th>
                 <th>Status</th>
