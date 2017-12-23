@@ -57,36 +57,40 @@
         <div id="result"></div>
 
     </div>
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Upload Meme</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form action="upload.php" method="post" enctype="multipart/form-data">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <input type="file" name="fileToUpload" id="fileToUpload">
-                        </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Meme Name:</label>
-                            <input type="text" name="memeName" id="memeName">
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <input type="submit" value="Upload Image" name="submit" class="nav-link btn btn-primary">
-                    </div>
-                </form>
+                </button>
             </div>
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col">
+                            <label for="fileToUpload" class="btn btn-primary form-control" id="cPic">Choose Picture</label>
+                            <input type="file" name="fileToUpload" id="fileToUpload" class="btn btn-primary">
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+                                <div class="input-group-addon">Name:</div>
+                                <input type="text" class="form-control" name="memeName" id="memeName">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <input type="submit" value="Upload Image" name="submit" class="nav-link btn btn-primary">
+                </div>
+            </form>
         </div>
     </div>
+</div>
 </body>
-
 </html>
 
 
