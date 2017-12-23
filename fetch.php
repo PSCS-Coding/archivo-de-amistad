@@ -1,6 +1,6 @@
 <?php
 //fetch.php
-$connect = mysqli_connect("localhost", "root", "root", "repo");
+$connect = mysqli_connect("localhost", "root", "", "repo");
 $output = '';
 if(isset($_POST["query"]))
 {
