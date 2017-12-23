@@ -29,7 +29,7 @@ if(mysqli_num_rows($result) > 0)
   $output .= '
   <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
         <div class="card" style="width: 20rem;">
-<img class="card-img-top" src="'.$row["memeTitle"].'" alt="Image failed to load." style="width:20rem;height:14rem;">
+<img class="card-img-top" src="'.$row["memeTitle"].'" alt="Image failed to load.">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Name: '.$row["memeTitle"].'</li>
     <li class="list-group-item">Date purchased: '.$better_date->format('M jS, Y').'</li>
