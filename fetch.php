@@ -1,10 +1,10 @@
 <?php
 //fetch.php
-$connect = mysqli_connect("localhost", "root", "", "repo");
+require_once("connection.php");
 $output = '';
 if(isset($_POST["query"]))
 {
- $search = mysqli_real_escape_string($connect, $_POST["query"]);
+ $search = mysqli_real_escape_string($db_server, $_POST["query"]);
  $query = "
   SELECT * FROM memes 
   WHERE memeTitle LIKE '%".$search."%'
@@ -17,7 +17,7 @@ else
   SELECT * FROM memes ORDER BY memeId LIMIT 6
  ";
 }
-$result = mysqli_query($connect, $query);
+$result = mysqli_query($db_server, $query);
 if(mysqli_num_rows($result) > 0)
 {
  $output .= '
