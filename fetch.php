@@ -25,23 +25,25 @@ if(mysqli_num_rows($result) > 0)
  ';
  while($row = mysqli_fetch_array($result))
  {
-  $better_date = new DateTime($row['dateAdded']);
-  $output .= '
-  <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-        <div class="card" style="width: 20rem;">
-        <a href="'.$row["memeTitle"].'" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="900" data-max-height="750">
-<img class="card-img-top img-fluid" src="'.$row["memeTitle"].'" alt="Image failed to load.">
-</a>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Name: '.$row["memeTitle"].'</li>
-    <li class="list-group-item">Date added: '.$better_date->format('M jS, Y').'</li>
-  </ul>
-      <div class="card-footer">
-      <small class="text-muted">Tags: Coming Soon.</small>
+    $name = explode("/", $row['memeTitle'])[1];
+    $name = explode(".", $name)[0];
+    $better_date = new DateTime($row['dateAdded']);
+    $output .= '
+    <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+            <div class="card" style="width: 20rem;">
+            <a href="'.$row["memeTitle"].'" data-toggle="lightbox" data-gallery="example-gallery" data-max-width="900" data-max-height="750" data-title="'.$name.'" data-footer="'.$row['comments'].'">
+    <img class="card-img-top img-fluid" src="'.$row["memeTitle"].'" alt="Image failed to load.">
+    </a>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">Name: '.$row["memeTitle"].'</li>
+        <li class="list-group-item">Date added: '.$better_date->format('M jS, Y').'</li>
+    </ul>
+        <div class="card-footer">
+        <small class="text-muted">Tags: Coming Soon.</small>
+        </div>
     </div>
-</div>
-</div>
-  ';
+    </div>
+    ';
  }
      $output .= '
 </div>
