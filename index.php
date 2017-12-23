@@ -31,6 +31,14 @@
                 <span class="sr-only">(current)</span>
               </a>
             </li>
+              <li class="nav-item">
+                  <form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+    <input type="file" name="fileToUpload" id="fileToUpload">
+    <input type="submit" value="Upload Image" name="submit" class="nav-link">
+</form>
+              <a class="nav-link" href="#">Upload</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Logout</a>
             </li>
