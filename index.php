@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>LOLOLLOL REPO</title>
+    <title>Repo</title>
 
     <!-- Bootstrap core CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
@@ -45,34 +45,23 @@
 
     <!-- Page Content -->
     <div class="container">
-
-      <h1 class="my-4 text-center text-lg-left">Thumbnail Gallery</h1>
-
+    <br>
       <div class="row text-center text-lg-left">
         <?php
-        $query = $db_server->query("SELECT memeTitle FROM memes ORDER BY memeId DESC");
+        $query = $db_server->query("SELECT * FROM memes ORDER BY memeId DESC");
 
 	    $memes = array();
 	    while ($fac_row = $query->fetch_row()) {
             ?>
             <div class="col-lg-3 col-md-4 col-xs-6">
-            <a href="#" class="d-block mb-4 h-100">
-              <img class="img-fluid img-thumbnail" src="<?php echo $fac_row[0] ?>" alt="">
+            <a href="<?php echo $fac_row[1] ?>" class="d-block mb-4 h-100">
+              <img class="img-fluid img-thumbnail" src="<?php echo $fac_row[1] ?>">
             </a>
           </div>
         <?php } ?>
 
 
     </div>
-    <!-- /.container -->
-
-    <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; El equipo de ensueño 2017</p>
-      </div>
-      <!-- /.container -->
-    </footer>
     <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
