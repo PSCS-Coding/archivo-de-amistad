@@ -3,7 +3,7 @@
 require_once("connection.php");
 
 $target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$target_file = $target_dir . basename($_POST['memeName'] + explode(".", $_FILES["fileToUpload"]["name"])[1]);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 // Check if image file is a actual image or fake image
@@ -40,7 +40,9 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+        echo "uploaded";
+
+
         header('Location: index.php?e=0');
     } else {
         echo "Sorry, there was an error uploading your file.";
