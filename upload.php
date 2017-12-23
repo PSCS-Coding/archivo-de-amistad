@@ -5,7 +5,14 @@ require_once("connection.php");
 $target_dir = "uploads/"; 
 $target_file = $target_dir . basename($_POST['memeName'] . "." . explode(".", $_FILES["fileToUpload"]["name"])[1]); 
 $uploadOk = 1; 
-$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION)); 
+$imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+$comments = $_POST['comments'];
+
+if(empty($_FILES)){
+    $url = $_GET['url'];
+    $img = $target_dir . basename($_POST['memeName'] . "." . end(explode(".", $_POST['url'])));
+    file_put_contents($img, file_get_contents($url));
+}
 
 // Check if image file is a actual image or fake image
 if (isset($_POST["submit"])) {
@@ -34,20 +41,20 @@ if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpe
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded."; 
-    header('Location: index.php?e=1'); 
+    header('Location: index.html?e=1'); 
 // if everything is ok, try to upload file
 }else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "uploaded"; 
         $memeName = $_POST['memeName']; 
-        $stmt = $db_server->prepare("INSERT INTO memes (memeTitle) VALUES (?)"); 
-        $stmt->bind_param('s', $target_file); 
+        $stmt = $db_server->prepare("INSERT INTO memes (memeTitle,comments) VALUES (?,?)"); 
+        $stmt->bind_param('ss', $target_file, $comments); 
         $stmt->execute(); 
         $stmt->close(); 
 
-        header('Location: index.php?e=0'); 
+        header('Location: index.html?e=0'); 
     }else {
         echo "Sorry, there was an error uploading your file."; 
-        header('Location: index.php?e=1'); 
+        header('Location: index.html?e=1'); 
     }
 }?>
