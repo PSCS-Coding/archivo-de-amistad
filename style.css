@@ -32,6 +32,9 @@ div#load_screen > div#loading{
     margin-top: 7% !important;
     background-color: #424950 !important;
 }
+.card:last-child {
+    margin-bottom: 5% !important;
+}
 .list-group-item {
     background-color: #40474d;
     color: darkorange !important;
@@ -55,6 +58,7 @@ border-bottom: 1px solid #404040;
 }
 .modal-footer {
     border-top: 1px solid #3c3c3c;
+    color: white;
 }
 .form-control {
     color: orange;
