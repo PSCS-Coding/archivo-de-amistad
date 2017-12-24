@@ -22,6 +22,8 @@ $ipResult = $db_server->query("SELECT * FROM ip WHERE adress = '".$ip."' ");
 if ($ipResult->num_rows != 1){
     echo "You are not whitelisted to use this server!";
     echo "<br>";
+    echo $ip;
+    echo "<br>";
     echo "This incident will be recorded!";
     $stmt = $db_server->prepare("INSERT INTO logs (adress) VALUES (?)"); 
     $stmt->bind_param('s', $ip); 
