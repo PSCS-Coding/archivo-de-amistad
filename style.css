@@ -65,13 +65,44 @@ input[type="search"], textarea{
 
     color: orange !important;
     background-color: #25292d !important;
-    border: 1px solid #FF9800 !important;
+    border: 1px solid #8c5605 !important;
 
 }
 input[type="text"] {
 
     color: orange !important;
     background-color: #25292d !important;
-    border: 1px solid #FF9800 !important;
+    border: 1px solid #8c5605 !important;
 
+}
+.close {
+    color: #fff;
+    text-shadow: 0 1px 0 #000;
+}
+.close:hover {
+    color: lightslategray;
+    text-shadow: 0 1px 0 #000;
+}
+input[type="text"][disabled] {
+   background-color: #242628;
+}
+input[type="text"][readonly] {
+   background-color: #1b1b1b!important;
+}
+.btn-outline-warning {
+    color: white;
+    border-color: #d8860f;
+}
+.btn-outline-warning:hover {
+    color: white;
+    border-color: #d8860f;
+    background-color: #8c5605;
+}
+.input-group-addon {
+    background-color: #292828;
+    border: 1px solid #d88510;
+    color: #afb0b1;
+}
+.btn-outline-success:hover {
+    background-color: #1e7732;
 }

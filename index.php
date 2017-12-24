@@ -65,17 +65,17 @@
                 <form action="upload.php" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="row">
-                            <div class="col">
+                            <div class="col-lg-12">
                                 <div class="input-group">
-                                    <label class="input-group-btn">
-                                            <span class="btn btn-primary">
-                        Browse&hellip; <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;" multiple>
-                    </span>
-                                        </label>
-                                    <input type="text" class="form-control" readonly>
+                                    <span class="input-group-btn">
+        <button class="btn btn-outline-warning" type="button" id="primaryButton" onclick="ExistingLogic()">Choose File(s)</button>
+        <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;" multiple>
+      </span>
+                                    <input type="text" class="form-control" readonly value="abcd">
                                 </div>
                             </div>
                         </div>
+                        <br />
                         <div class="row">
                             <div class="col">
                                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
@@ -110,6 +110,10 @@
         event.preventDefault();
         $(this).ekkoLightbox();
     });
+
+    $('#primaryButton').click(function() {
+        $("#fileToUpload").click();
+    })
 
     window.addEventListener("load", function() {
         var load_screen = document.getElementById("load_screen");
@@ -154,4 +158,33 @@
         };
 
     });
+
+    $(function() {
+
+        // We can attach the `fileselect` event to all file inputs on the page
+        $(document).on('change', ':file', function() {
+            var input = $(this),
+                numFiles = input.get(0).files ? input.get(0).files.length : 1,
+                label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+            input.trigger('fileselect', [numFiles, label]);
+        });
+
+        // We can watch for our custom `fileselect` event like this
+        $(document).ready(function() {
+            $(':file').on('fileselect', function(event, numFiles, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+
+            });
+        });
+
+    });
+
 </script>
