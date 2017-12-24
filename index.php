@@ -1,5 +1,7 @@
 <html>
-<?php require_once("confirm.php"); ?>
+<?php require_once("confirm.php"); 
+$ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP_CLIENT_IP']);
+?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,7 +39,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                   <span class="navbar-text">
-    192.168.1.1
+    <?php echo $ip; ?>
   </span>
             </ul>
             <form class="form-inline my-2 my-lg-0">
