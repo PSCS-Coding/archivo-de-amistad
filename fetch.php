@@ -14,7 +14,7 @@ if(isset($_POST["query"]))
 else
 {
  $query = "
-  SELECT * FROM memes ORDER BY memeId LIMIT 6
+  SELECT * FROM memes ORDER BY memeId
  ";
 }
 $result = mysqli_query($db_server, $query);
