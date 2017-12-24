@@ -41,13 +41,13 @@ if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpe
 // make sure there is a comment
 if (empty($_POST['comments'])){
     echo "you need a comment";
-    header('Location: index.html?e=1');
+    header('Location: index.php?e=1');
 }
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded."; 
-    header('Location: index.html?e=1'); 
+    header('Location: index.php?e=1'); 
 // if everything is ok, try to upload file
 }else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -58,9 +58,9 @@ if ($uploadOk == 0) {
         $stmt->execute(); 
         $stmt->close(); 
 
-        header('Location: index.html?e=0'); 
+        header('Location: index.php?e=0'); 
     }else {
         echo "Sorry, there was an error uploading your file."; 
-        header('Location: index.html?e=1'); 
+        header('Location: index.php?e=1'); 
     }
 }?>

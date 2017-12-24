@@ -1,11 +1,5 @@
 <html>
-<script>
-    window.onload = function() {
-        if (document.cookie != "login=P9IzINAdECQqQ") {
-            window.location.replace("login.html");
-        }
-    }
-</script>
+<?php require_once("confirm.php"); ?>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
