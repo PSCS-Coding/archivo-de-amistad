@@ -71,7 +71,7 @@
         <button class="btn btn-outline-warning" type="button" id="primaryButton" onclick="ExistingLogic()">Choose File(s)</button>
         <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;" multiple>
       </span>
-                                    <input type="text" class="form-control" readonly value="abcd">
+                                    <input type="text" class="form-control" readonly>
                                 </div>
                             </div>
                         </div>

@@ -106,3 +106,6 @@ input[type="text"][readonly] {
 .btn-outline-success:hover {
     background-color: #1e7732;
 }
+.btn-outline-success {
+    color: white;
+}
