@@ -120,7 +120,7 @@ input[type="text"][readonly] {
     background-color: #3e444a;
 }
 .badge-warning {
-    color: white;
+    color: #343a40;
     background-color: #d88510;
 }
 .badge {
