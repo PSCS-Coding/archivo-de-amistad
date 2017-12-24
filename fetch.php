@@ -8,6 +8,7 @@ if(isset($_POST["query"]))
  $query = "
   SELECT * FROM memes 
   WHERE memeTitle LIKE '%".$search."%'
+  OR tags LIKE '%".$search."%'
   LIMIT 6
  ";
 }
@@ -39,7 +40,7 @@ if(mysqli_num_rows($result) > 0)
         <li class="list-group-item">Date added: '.$better_date->format('M jS, Y').'</li>
     </ul>
         <div class="card-footer">
-        <small class="text-muted">Tags: Coming Soon.</small>
+        <small class="text-muted">Tags: '.$row["tags"].'</small>
         </div>
     </div>
     </div>
