@@ -1,4 +1,11 @@
 <html>
+<script>
+    window.onload = function() {
+        if (document.cookie != "login=P9IzINAdECQqQ") {
+            window.location.replace("login.html");
+        }
+    }
+</script>
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -46,7 +53,7 @@
             <p>&nbsp;</p>
             <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModal">Upload</button>
             <p>&nbsp;</p>
-            <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Logout</button>
+            <button id="logout" class="btn btn-outline-warning my-2 my-sm-0" type="button">Logout</button>
         </div>
     </nav>
     <style>
@@ -112,15 +119,17 @@
         event.preventDefault();
         $(this).ekkoLightbox();
     });
-</script>
-<script>
+
     window.addEventListener("load", function() {
         var load_screen = document.getElementById("load_screen");
         document.body.removeChild(load_screen);
     });
-</script>
-<script>
-    // console.log(/[0-5]/.test("3"));
+
+    document.getElementById("logout").addEventListener("click", function() {
+        document.cookie = "login" + '=; Max-Age=0'
+        window.location.href = "login.html";
+    });
+
     $(document).ready(function() {
 
         load_data();
