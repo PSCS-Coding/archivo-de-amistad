@@ -113,3 +113,9 @@ input[type="text"][readonly] {
 .btn-outline-success {
     color: white;
 }
+.btn-primary {
+    background-color: #0557af;
+}
+.btn-secondary {
+    background-color: #3e444a;
+}

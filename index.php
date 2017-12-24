@@ -29,7 +29,7 @@
         </div>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">El repositorio</a>
+        <a class="navbar-brand" href="#"><span class="badge badge-warning">El</span> Repositorio</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -95,7 +95,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <input type="button" value="Close" class="nav-link btn btn-secondary" data-dismiss="modal">
                         <input type="submit" value="Upload Image" name="submit" class="nav-link btn btn-primary">
                     </div>
                 </form>
