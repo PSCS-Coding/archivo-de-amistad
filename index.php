@@ -71,8 +71,8 @@
                             <div class="col-lg-12">
                                 <div class="input-group">
                                     <span class="input-group-btn">
-        <button class="btn btn-outline-warning" type="button" id="primaryButton" onclick="ExistingLogic()">Choose File(s)</button>
-        <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;" multiple>
+        <button class="btn btn-outline-warning" type="button" id="primaryButton" onclick="ExistingLogic()">Choose File</button>
+        <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;">
       </span>
                                     <input type="text" class="form-control" readonly>
                                 </div>
