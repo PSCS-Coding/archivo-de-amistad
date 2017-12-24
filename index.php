@@ -16,11 +16,11 @@
     <!-- bootstrap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet">
 </head>
 
-<body style="background-color:#e4e4e4 !important;">
+<body style="background-color:#24292d !important;">
     <div id="load_screen">
         <div id="loading">Loading Repo...
             <div class="progress">
@@ -28,37 +28,25 @@
             </div>
         </div>
     </div>
-    <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">El repositorio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <!--<input class="form-control mr-sm-2" type="text" placeholder="Search">-->
-                <div class="input-group">
-                    <span class="input-group-addon" id="basic-addon3">Search:</span>
-                    <input type="text" class="form-control" id="search_text" name="search_text" aria-describedby="basic-addon3">
-                </div>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search_text" name="search_text">
             </form>
             <p>&nbsp;</p>
             <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModal">Upload</button>
             <p>&nbsp;</p>
+            <p>&nbsp;</p>
             <button id="logout" class="btn btn-outline-warning my-2 my-sm-0" type="button">Logout</button>
         </div>
     </nav>
-    <style>
-        .card {
-            margin-top: 7% !important;
-        }
-        
-        .alert {
-            margin-top: 3% !important;
-        }
-    </style>
     <div class="container">
 
         <div id="result"></div>
@@ -71,15 +59,24 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Upload Meme</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                 </div>
                 <form action="upload.php" method="post" enctype="multipart/form-data">
                     <div class="modal-body">
                         <div class="row">
                             <div class="col">
-                                <input type="file" name="fileToUpload" id="fileToUpload" class="form-control">
+                                <div class="input-group">
+                                    <label class="input-group-btn">
+                                            <span class="btn btn-primary">
+                        Browse&hellip; <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;" multiple>
+                    </span>
+                                        </label>
+                                    <input type="text" class="form-control" readonly>
+                                </div>
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col">
                                 <div class="input-group mb-2 mr-sm-2 mb-sm-0">
                                     <div class="input-group-addon">Name:</div>
