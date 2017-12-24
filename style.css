@@ -119,3 +119,14 @@ input[type="text"][readonly] {
 .btn-secondary {
     background-color: #3e444a;
 }
+.badge-warning {
+    color: white;
+    background-color: #d88510;
+}
+.badge {
+    padding: 0.25em .4em;
+    font-size: 90%;
+    font-weight: 700;
+    line-height: 1.2;
+    
+}

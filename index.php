@@ -41,7 +41,7 @@
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search_text" name="search_text">
             </form>
             <p>&nbsp;</p>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModal">Upload</button>
+            <button class="btn btn-outline-warning my-2 my-sm-0" type="button" data-toggle="modal" data-target="#exampleModal">Upload</button>
             <p>&nbsp;</p>
             <p>&nbsp;</p>
             <button id="logout" class="btn btn-outline-warning my-2 my-sm-0" type="button">Logout</button>
@@ -95,8 +95,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <input type="button" value="Close" class="nav-link btn btn-secondary" data-dismiss="modal">
-                        <input type="submit" value="Upload Image" name="submit" class="nav-link btn btn-primary">
+                        <input type="button" value="Close" class="nav-link btn btn-outline-warning" data-dismiss="modal">
+                        <input type="submit" value="Upload Image" name="submit" class="nav-link btn btn-outline-warning">
                     </div>
                 </form>
             </div>
