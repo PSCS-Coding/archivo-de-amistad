@@ -1,5 +1,8 @@
 <?php
 
+ini_set('display_errors', '1');
+error_reporting(E_ALL);
+
 require_once("connection.php"); 
 
 $target_dir = "uploads/"; 
@@ -52,7 +55,8 @@ if ($uploadOk == 0) {
 }else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         echo "uploaded"; 
-        $memeName = $_POST['memeName']; 
+        echo $target_file;
+        echo $comments;
         $stmt = $db_server->prepare("INSERT INTO memes (memeTitle,comments) VALUES (?,?)"); 
         $stmt->bind_param('ss', $target_file, $comments); 
         $stmt->execute(); 
