@@ -35,7 +35,7 @@ if(mysqli_num_rows($result) > 0)
     <img class="card-img-top img-fluid" src="'.$row["memeTitle"].'" alt="Image failed to load.">
     </a>
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">Name: '.$row["memeTitle"].'</li>
+        <li class="list-group-item">Name: '.$name.'</li>
         <li class="list-group-item">Date added: '.$better_date->format('M jS, Y').'</li>
     </ul>
         <div class="card-footer">
