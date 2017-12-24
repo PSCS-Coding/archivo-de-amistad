@@ -130,3 +130,7 @@ input[type="text"][readonly] {
     line-height: 1.2;
     
 }
+.alert-danger {
+    background-color: #670811;
+    color: #ffffff;
+}

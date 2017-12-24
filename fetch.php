@@ -54,7 +54,6 @@ else
 {
  echo '<div class="alert alert-danger" role="alert">
   <strong>Oh nooooo!</strong> No images were found.
-  <a href="#" id="goButton">WOW</a>
 </div>';
 }
 
