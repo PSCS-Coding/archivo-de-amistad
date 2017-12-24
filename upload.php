@@ -38,6 +38,12 @@ if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpe
     $uploadOk = 0; 
 }
 
+// make sure there is a comment
+if (empty($_POST['comments'])){
+    echo "you need a comment";
+    header('Location: index.html?e=1');
+}
+
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
     echo "Sorry, your file was not uploaded."; 
