@@ -6,20 +6,7 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Repo</title>
-
-    <!-- requirements -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-    <!-- lightbox -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
-    <!-- bootstrap -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
+    <?php require_once("header.php"); ?>
 </head>
 
 <body style="background-color:#24292d !important;">
@@ -129,14 +116,14 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
 
     document.getElementById("logout").addEventListener("click", function() {
         document.cookie = "login" + '=; Max-Age=0'
-        window.location.href = "login.html";
+        window.location.href = "login.php";
     });
 
     $(document).ready(function() {
 
         load_data();
         
-
+        // load images from external page
         function load_data(query) {
             $.ajax({
                 url: "fetch.php",
@@ -159,16 +146,18 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
             }
         });
 
+        // add event handlers to image captions
         function addHandlers(){
-            console.log("loaded");
             var tagElementList = document.getElementsByClassName("clickableTags");
             console.log(tagElementList.length);
             for(var i = 0; i < tagElementList.length; i++){
-                console.log(i);
                 var postId = tagElementList[i].id;
-                tagElementList[i].addEventListener("click",function(e){
-                    this.style.backgroundColor = "red";
-                    console.log("clicked " + this.id);
+                tagElementList[i].addEventListener("click",function(){
+                    var container =  this.parentNode;
+                    console.log(container);
+                    container.childNodes[3].style.display = "block";
+                    container.childNodes[1].style.display = "none";
+                    console.log("clicked " + container.id);
                 });
             }
         }
