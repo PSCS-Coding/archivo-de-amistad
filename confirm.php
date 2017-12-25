@@ -29,7 +29,7 @@ if ($ipResult->num_rows != 1){
     $stmt->bind_param('s', $ip); 
     $stmt->execute(); 
     $stmt->close();
-    header('Location: login.html?e=1');
+    header('Location: login.php?e=1');
 }
 
 if($loginTest == $loginRow['password']){
@@ -40,7 +40,7 @@ if($loginTest == $loginRow['password']){
     }
 } else {
     // echo "incorrect";
-    header('Location: login.html?e=1'); 
+    header('Location: login.php?e=1'); 
 }
 
 
