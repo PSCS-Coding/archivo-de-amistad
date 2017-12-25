@@ -40,7 +40,9 @@ if(mysqli_num_rows($result) > 0)
         <li class="list-group-item">Date added: '.$better_date->format('M jS, Y').'</li>
     </ul>
         <div class="card-footer">
-        <small class="text-muted">Tags: '.$row["tags"].'</small>
+            <div class="clickableTags" id='.$row["memeId"].'>
+                <small class="text-muted">Tags: '.$row["tags"].'</small>
+            </div>
         </div>
     </div>
     </div>

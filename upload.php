@@ -11,6 +11,8 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 $comments = $_POST['comments'];
 
+print_r($_FILES);
+
 if(empty($_FILES)){
     $url = $_GET['url'];
     $img = $target_dir . basename($_POST['memeName'] . "." . end(explode(".", $_POST['url'])));

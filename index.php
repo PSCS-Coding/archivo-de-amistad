@@ -40,7 +40,7 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
             <ul class="navbar-nav mr-auto">
                   <span class="navbar-text">
     <?php echo $ip; ?>
-  </span>
+    </span>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search_text" name="search_text">
@@ -52,6 +52,7 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
             <button id="logout" class="btn btn-outline-warning my-2 my-sm-0" type="button">Logout</button>
         </div>
     </nav>
+    <!-- container for fetched images -->
     <div class="container">
 
         <div id="result"></div>
@@ -73,9 +74,9 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
                             <div class="col-lg-12">
                                 <div class="input-group">
                                     <span class="input-group-btn">
-        <button class="btn btn-outline-warning" type="button" id="primaryButton" onclick="ExistingLogic()">Choose File</button>
-        <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;">
-      </span>
+                                        <button class="btn btn-outline-warning" type="button" id="primaryButton" onclick="ExistingLogic()">Choose File</button>
+                                        <input type="file" name="fileToUpload" id="fileToUpload" style="display: none;">
+                                    </span>
                                     <input type="text" class="form-control" readonly>
                                 </div>
                             </div>
@@ -120,6 +121,7 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
         $("#fileToUpload").click();
     })
 
+    // main loading page event
     window.addEventListener("load", function() {
         var load_screen = document.getElementById("load_screen");
         document.body.removeChild(load_screen);
@@ -133,6 +135,7 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
     $(document).ready(function() {
 
         load_data();
+        
 
         function load_data(query) {
             $.ajax({
@@ -143,6 +146,7 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
                 },
                 success: function(data) {
                     $('#result').html(data);
+                    addHandlers();
                 }
             });
         }
@@ -155,12 +159,19 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
             }
         });
 
-
-        goFunction();
-
-        function goFunction(snoopy) {
-            // console.log("Ran the function");
-        };
+        function addHandlers(){
+            console.log("loaded");
+            var tagElementList = document.getElementsByClassName("clickableTags");
+            console.log(tagElementList.length);
+            for(var i = 0; i < tagElementList.length; i++){
+                console.log(i);
+                var postId = tagElementList[i].id;
+                tagElementList[i].addEventListener("click",function(e){
+                    this.style.backgroundColor = "red";
+                    console.log("clicked " + this.id);
+                });
+            }
+        }
 
     });
 
