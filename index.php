@@ -25,9 +25,9 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                  <span class="navbar-text">
-    <?php echo $ip; ?>
-    </span>
+                <span class="navbar-text">
+                    <?php echo $ip; ?>
+                </span>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search_text" name="search_text">
@@ -52,8 +52,8 @@ $ip = $_SERVER['REMOTE_ADDR']?:($_SERVER['HTTP_X_FORWARDED_FOR']?:$_SERVER['HTTP
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Upload Meme</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <form action="upload.php" method="post" enctype="multipart/form-data">
                     <div class="modal-body">

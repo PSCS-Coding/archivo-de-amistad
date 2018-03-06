@@ -9,13 +9,13 @@ if(isset($_POST["query"]))
   SELECT * FROM memes 
   WHERE memeTitle LIKE '%".$search."%'
   OR tags LIKE '%".$search."%'
-  LIMIT 6
+  LIMIT 3
  ";
 }
 else
 {
  $query = "
-  SELECT * FROM memes ORDER BY memeId
+  SELECT * FROM memes ORDER BY memeId LIMIT 3
  ";
 }
 $result = mysqli_query($db_server, $query);
